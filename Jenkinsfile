@@ -30,6 +30,13 @@ pipeline {
                 sh 'trivy fs --format table -o fs-report.html .'
             }
         }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'mvn sonar:sonar -Dsonar.exclusions=**/*.html,**/fs-report.html,**/image-report.html'
+                }
+            }
+        }
         stage('Code Quality Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
