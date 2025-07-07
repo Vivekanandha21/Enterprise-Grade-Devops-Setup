@@ -30,17 +30,17 @@ pipeline {
                 sh 'trivy fs --format table -o fs-report.html .'
             }
         }
-        stage('Quality Gate Check'){
-            steps{
-                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
-            }
-        }
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
                     sh 'mvn sonar:sonar -Dsonar.exclusions=**/*.html,**/fs-report.html,**/image-report.html'
                  }
              }
+        }
+        stage('Quality Gate Check'){
+            steps{
+                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
+            }
         }
         stage('Build the Application'){
             steps{
