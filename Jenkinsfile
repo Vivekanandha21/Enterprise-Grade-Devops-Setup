@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/praduman8435/Capstone-Mega-DevOps-Project.git'
+                git branch: 'main', url: 'https://github.com/https://github.com/Vivekanandha21/Enterprise-Grade-Devops-Setup.git'
             }
         }
         stage('Compilation') {
@@ -59,21 +59,21 @@ pipeline {
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh 'docker build -t thepraduman/bankapp:$IMAGE_TAG .'
+                        sh 'docker build -t vktechie21/bankapp:$IMAGE_TAG .'
                     }
                 }
             }
         }
         stage('Docker Image Scan') {
             steps {
-                sh 'trivy image --format table -o image-report.html thepraduman/bankapp:$IMAGE_TAG'
+                sh 'trivy image --format table -o image-report.html vktechie21/bankapp:$IMAGE_TAG'
             }
         }
         stage('Push Docker Image') {
             steps {
                 script{
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh 'docker push thepraduman/bankapp:$IMAGE_TAG'
+                        sh 'docker push vktechie21/bankapp:$IMAGE_TAG'
                     }
                 }
             }
@@ -83,24 +83,25 @@ pipeline {
                 script{
                     cleanWs()
                     sh '''
-                    git clone https://github.com/praduman8435/Capstone-Mega-CD-Pipeline.git
-                    cd Capstone-Mega-CD-Pipeline
-                    sed -i "s|thepraduman/bankapp:.*|thepraduman/bankapp:${IMAGE_TAG}|" kubernetes/Manifest.yaml
+                    git clone https://github.com/Vivekanandha21/Enterprise-Project-CD-Pipeline.git
+                    cd Enterprise-Project-CD-Pipeline
+                    sed -i "s|vktechie21/bankapp:.*|vktechie21/bankapp:${IMAGE_TAG}|" kubernetes/Manifest.yaml
+
 
                     echo "image tag updated"
                     cat kubernetes/Manifest.yaml
 
                     # commit and push the changes
-                    git config user.name "Praduman"
-                    git config user.email "praduman.cnd@gmail.com"
+                    git config user.name "Vivekanandha21"
+                    git config user.email "vkit21fresher@gmail.com"
                     git add kubernetes/Manifest.yaml
                     git commit -m "image tag updated to ${IMAGE_TAG}"
                     '''
 
                     withCredentials([usernamePassword(credentialsId: 'github-cred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
                     sh '''
-                    cd Capstone-Mega-CD-Pipeline
-                    git remote set-url origin https://$GIT_USER:$GIT_PASS@github.com/praduman8435/Capstone-Mega-CD-Pipeline.git
+                    cd Enterprise-Project-CD-Pipeline
+                    git remote set-url origin https://$GIT_USER:$GIT_PASS@github.com/Vivekanandha21/Enterprise-Project-CD-Pipeline.git
                     git push origin main
                     '''
                     }
@@ -133,9 +134,9 @@ pipeline {
             emailext(
                 subject: "${jobName} - Build #${buildNumber} - ${pipelineStatus.toUpperCase()}",
                 body: body,
-                to: 'praduman.cnd@gmail.com',
-                from: 'praduman.8435@gmail.com',
-                replyTo: 'praduman.8435@gmail.com',
+                to: 'vivekbujji143@gmail.com',
+                from: 'vktechpractice21@gmail.com',
+                replyTo: 'vkit21fresher@gmail.com',
                 mimeType: 'text/html',
                 attachmentsPattern: 'fs-report.html'
             )
