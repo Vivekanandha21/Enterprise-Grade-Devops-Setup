@@ -30,10 +30,11 @@ pipeline {
                 sh 'trivy fs --format table -o fs-report.html .'
             }
         }
-        stage('SonarQube Analysis') {
+        stage('Code Quality Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                sh 'sonar-scanner'
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar-projectName=GCBank -Dsonar.projectKey=GCBank \
+                            -Dsonar.java.binaries=target '''
                 }
             }
         }
