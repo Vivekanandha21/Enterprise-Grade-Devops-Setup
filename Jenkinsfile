@@ -33,9 +33,9 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh 'mvn sonar:sonar -Dsonar.exclusions=**/*.html,**/fs-report.html,**/image-report.html'
-                 }
-             }
+                sh 'sonar-scanner'
+                }
+            }
         }
         stage('Quality Gate Check'){
             steps{
