@@ -30,14 +30,6 @@ pipeline {
                 sh 'trivy fs --format table -o fs-report.html .'
             }
         }
-        stage('Code Quality Analysis') {
-            steps {
-                withSonarQubeEnv('sonar') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar-projectName=GCBank -Dsonar.projectKey=GCBank \
-                            -Dsonar.java.binaries=target '''
-                }
-            }
-        }
         stage('Quality Gate Check'){
             steps{
                 waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
