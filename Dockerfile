@@ -35,3 +35,5 @@ EXPOSE 8080
 
 # Start the application
 ENTRYPOINT ["java", "-jar", "/src/target/bankapp.jar"]
+
+
