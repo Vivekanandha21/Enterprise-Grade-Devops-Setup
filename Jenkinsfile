@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Quality Gate Check'){
             steps{
-                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
+                waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
             }
         }
         stage('Build the Application'){
