@@ -6,7 +6,7 @@
 FROM maven:3.8.3-openjdk-17 as builder 
 
 # Add maintainer, so that new user will understand who had written this Dockerfile
-MAINTAINER Praduman Prajapati<praduman.8435@gmail.com>
+MAINTAINER Vivekanandha21<vkit21fresher@gmail.com>
 
 # Add labels to the image to filter out if we have multiple application running
 LABEL app=bankapp
