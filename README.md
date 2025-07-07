@@ -1,6 +1,6 @@
-# Capstone mega DevSecOps Project 🚀 
+# Enterprise-Grade-Devops-Setup 🚀 
 
-## CD Repository: 👉 https://github.com/praduman8435/Capstone-Mega-CD-Pipeline
+## CD Repository: 👉 
 
 ## 🔍 Project Overview
 This project showcases a **complete, production-grade DevSecOps pipeline** to deploy a containerized MERN application on **Amazon EKS** using **Terraform, Jenkins, Helm, and Kubernetes**. It incorporates **CI/CD automation, infrastructure as code, monitoring, and security** to deliver a secure, scalable, and highly available cloud-native deployment.
@@ -79,15 +79,3 @@ This project showcases a **complete, production-grade DevSecOps pipeline** to de
 - ✅ Real-time monitoring & alerting in place
 - ✅ Infrastructure-as-code for repeatable setup
 - ✅ Easy collaboration and maintainability
-
-## 📖 Read the Full Blog
-[**capstone-devops-project-enterprise-grade-cicd-pipeline-with-kubernetes-on-aws-jenkins-helm-ingress-and-monitoring**](https://itspraduman.hashnode.dev/capstone-devops-project-enterprise-grade-cicd-pipeline-with-kubernetes-on-aws-jenkins-helm-ingress-and-monitoring)
-
-## ☕ Support
-
-If you found this project helpful or interesting, consider supporting me by buying a coffee:
-
-<a href="https://www.buymeacoffee.com/praduman" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important; width: 145px !important;">
-</a>
-
