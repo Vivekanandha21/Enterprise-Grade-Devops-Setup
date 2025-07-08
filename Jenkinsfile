@@ -142,7 +142,7 @@ pipeline {
                 body: body,
                 to: 'vivekbujji143@gmail.com',
                 from: 'vktechpractice21@gmail.com',
-                replyTo: 'vkit21fresher@gmail.com',
+                replyTo: 'vktechpractice21.com',
                 mimeType: 'text/html',
                 attachmentsPattern: 'fs-report.html'
             )
