@@ -3,7 +3,7 @@
 ## CD Repository: 👉 https://github.com/Vivekanandha21/Enterprise-Project-CD-Pipeline.git
 
 ## 🔍 Project Overview
-This project showcases a **complete, Production-Grade DevSecOps Pipeline** to Deploy a Containerized Java Application on **Amazon EKS** using **Terraform, Jenkins, Helm, and Kubernetes**. It incorporates **CI/CD automation, infrastructure as code, monitoring, and security** to deliver a secure, scalable, and highly available cloud-native deployment.
+This project showcases a **complete, Production-Grade DevSecOps Pipeline** to Deploy a Containerized Java Application on **Amazon EKS** using **Terraform, Jenkins, Helm, and Kubernetes**. It incorporates **CI/CD Automation, Infrastructure as Code, Monitoring, and Security** to deliver a Secure, Scalable, and Highly Available Cloud-Native Deployment.
 
 > Designed as a real-world capstone project, this serves as a blueprint for setting up advanced DevOps workflows with automation, security, and observability built-in.
 
