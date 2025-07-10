@@ -18,7 +18,7 @@ This project showcases a **complete, Production-Grade DevSecOps Pipeline** to De
 - ✅ **Helm for Kubernetes package management**
 - ✅ **Trivy and SonarQube for vulnerability scanning**
 - ✅ **Prometheus & Grafana for monitoring**
-- ✅ **NGINX Ingress + Cert-Manager for secure SSL endpoints**
+- ✅ **NGINX Ingress + Cert-Manager for secure SSL Endpoints**
 
 ## 🛠️ Tools & Technologies Used
 
